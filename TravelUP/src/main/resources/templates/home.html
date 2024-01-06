@@ -21,6 +21,12 @@ devices with varying screen sizes -->
             color: #333;
         }
 
+        .login-container {
+            position: fixed;
+            top: 10px;
+            right: 20px;
+        }
+
     .navbar {
         position: fixed;
         top: 0;
@@ -138,13 +144,18 @@ devices with varying screen sizes -->
 <h1>TravelUP</h1>
 
 <!-- Links-->
+
+<div class="login-container">
+    <a th:href="@{/login}">Log In</a>
+</div>
+
+
 <div class="navbar">
     <button class="dropbtn">Menu</button>
     <div class="navbar-content">
         <a th:href="@{/}">Home</a>
         <a th:href="@{/reviews}">Reviews</a>
         <a th:href="@{/addreview}">Add Review</a>
-        <a th:href="@{/login}">Log In</a>
         <a th:href="@{/createaccount}">Create Account</a>
     </div>
 </div>
