@@ -1,8 +1,12 @@
 package org.greencoding.TravelUP.models.data;
 
+import org.greencoding.TravelUP.models.User;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-import org.greencoding.TravelUP.models.Users;
-import org.springframework.data.jpa.repository.JpaRepository;
+@Repository
 
-public interface UserRepository extends JpaRepository<Users, Integer> {
+public interface UserRepository extends CrudRepository<User, Integer> {
+
+    User findByUsername(String username);
 }
