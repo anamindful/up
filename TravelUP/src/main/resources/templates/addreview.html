@@ -13,6 +13,11 @@
             text-align: center;
         }
 
+        .login-container {
+            position: fixed;
+            top: 10px;
+            right: 20px;
+        }
 
         h2 {
             color: #333;
@@ -105,6 +110,10 @@
 <body>
 
 <!-- Links-->
+<div class="login-container">
+    <a th:href="@{/login}">Log In</a>
+</div>
+
 <div class="navbar">
     <button class="dropbtn">Menu</button>
     <div class="navbar-content">
@@ -133,10 +142,6 @@
     <label for="locationInput">Location:</label>
     <input type="text" id="locationInput" name="locationInput" required placeholder="Type the location">
 
-
-    <!-- Upload Picture -->
-    <label for="picture">Upload Picture:</label>
-    <input type="file" id="picture" name="picture" accept="image/*">
 
     <!-- Review Text -->
     <label for="reviewText">Review:</label>

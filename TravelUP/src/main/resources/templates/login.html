@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <style>
         body {
@@ -7,6 +7,12 @@
             background-color: #f4f4f4;
             text-align: center;
             margin: 20px;
+        }
+
+        .login-container {
+            position: fixed;
+            top: 10px;
+            right: 20px;
         }
 
         .container {
@@ -49,7 +55,23 @@
 <main>
     <h1>Log In</h1>
 
-    <form method="post">
+    <!-- Links-->
+    <div class="login-container">
+        <a th:href="@{/login}">Log In</a>
+    </div>
+
+    <div class="navbar">
+        <button class="dropbtn">Menu</button>
+        <div class="navbar-content">
+            <a th:href="@{/}">Home</a>
+            <a th:href="@{/reviews}">Reviews</a>
+            <a th:href="@{/addreview}">Add Review</a>
+            <a th:href="@{/login}">Log In</a>
+            <a th:href="@{/createaccount}">Create Account</a>
+        </div>
+    </div>
+
+    <form method="post" action="/login">
         <div class="container">
             <div class="row">
                 <div class="form-item col-4">

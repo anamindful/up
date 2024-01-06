@@ -17,6 +17,12 @@
             color: #333;
         }
 
+        .login-container {
+            position: fixed;
+            top: 10px;
+            right: 20px;
+        }
+
     .navbar {
         position: fixed;
         top: 0;
@@ -124,6 +130,11 @@
 <h1>Reviews</h1>
 
 <!-- Links-->
+<div class="login-container">
+    <a th:href="@{/login}">Log In</a>
+</div>
+
+
 <div class="navbar">
     <button class="dropbtn">Menu</button>
     <div class="navbar-content">
