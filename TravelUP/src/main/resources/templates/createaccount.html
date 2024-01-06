@@ -1,9 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Account</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,54 +10,25 @@
             text-align: center;
         }
 
-
         h2 {
             color: #333;
         }
 
-    .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 10%;
-    }
+        .home {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            text-decoration: none;
+            color: #333;
+        }
 
-    .navbar button {
-        font-size: 16px;
-        border: none;
-        outline: none;
-        color: #333;
-        padding: 14px 16px;
-        background-color: #f4f4f4;
-        font-family: Arial, sans-serif;
-        margin: 0;
-    }
-
-    .navbar-content {
-        display: none;
-        position: absolute;
-        background-color: #f4f4f4;
-        min-width: 160px;
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-        z-index: 1;
-    }
-
-    .navbar-content a {
-        float: none;
-        color: #333;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
-    }
-
-    .navbar-content a:hover {
-        background-color: white;
-    }
-
-    .navbar:hover .navbar-content {
-        display: block;
-    }
+        .login {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            text-decoration: none;
+            color: #333;
+        }
 
         form {
             background-color: #fff;
@@ -102,42 +70,41 @@
         }
     </style>
 </head>
+
 <body>
 
-<!-- Links-->
-<div class="navbar">
-    <button class="dropbtn">Menu</button>
-    <div class="navbar-content">
-        <a th:href="@{/}">Home</a>
-        <a th:href="@{/reviews}">Reviews</a>
-        <a th:href="@{/addreview}">Add Review</a>
-        <a th:href="@{/login}">Log In</a>
-        <a th:href="@{/createaccount}">Create Account</a>
-    </div>
-</div>
 
-<form>
-    <h2>Create Account</h2>
+<main>
+    <h1>Register New User</h1>
 
-    <label for="fullName">Full Name:</label>
-    <input type="text" id="fullName" name="fullName" required>
+    <form method="post">
+        <div class="container">
+            <div class="row">
+                <div class="form-item col-4">
+                    <label th:for="username">Username</label>
+                    <input th:field="${registrationFormDTO.username}" />
+                    <p class="error" th:errors="${registrationFormDTO.username}"></p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="form-item col-4">
+                    <label th:for="password">Password</label>
+                    <input th:field="${registrationFormDTO.password}" type="password" />
+                    <p class="error" th:errors="${registrationFormDTO.password}"></p>
+                </div>
+                <div class="form-item col-4">
+                    <label th:for="verifyPassword">Verify Password</label>
+                    <input th:field="${registrationFormDTO.verifyPassword}" type="password" />
+                    <p class="error" th:errors="${registrationFormDTO.verifyPassword}"></p>
+                </div>
+            </div>
+        </div>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
-
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
-
-    <label for="confirmPassword">Confirm Password:</label>
-    <input type="password" id="confirmPassword" name="confirmPassword" required>
-
-    <!-- Additional Fields as Needed -->
-
-    <button type="submit">Create Account</button>
-</form>
+        <button type="submit">Register</button>
+    </form>
+</main>
 
 </body>
 </html>
