@@ -19,14 +19,14 @@ public class Users extends AbstractEntity {
     @Column(name = "profile_picture")
     private byte[] profilePicture;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Post> posts;
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+//    private List<Post> posts;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Comment> comments;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<PostRating> postRatings;
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+//    private List<PostRating> postRatings;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<ApplicationRating> applicationRatings;
@@ -34,15 +34,16 @@ public class Users extends AbstractEntity {
     @OneToMany(mappedBy = "follower", cascade = CascadeType.ALL)
     private List<Follower> followers;
 
-    public Users(Long id, String name, String email, String password, byte[] profilePicture, List<Post> posts, List<Comment> comments, List<PostRating> postRatings, List<ApplicationRating> applicationRatings, List<Follower> followers) {
+    public Users () {}
+
+    public Users(Long id, String name, String email, String password, byte[] profilePicture, List<Post> posts, List<Comment> comments, List<ApplicationRating> applicationRatings, List<Follower> followers) {
         super(id);
         this.name = name;
         this.email = email;
         this.password = password;
         this.profilePicture = profilePicture;
-        this.posts = posts;
         this.comments = comments;
-        this.postRatings = postRatings;
+//        this.postRatings = postRatings;
         this.applicationRatings = applicationRatings;
         this.followers = followers;
     }
@@ -79,13 +80,6 @@ public class Users extends AbstractEntity {
         this.profilePicture = profilePicture;
     }
 
-    public List<Post> getPosts() {
-        return posts;
-    }
-
-    public void setPosts(List<Post> posts) {
-        this.posts = posts;
-    }
 
     public List<Comment> getComments() {
         return comments;
@@ -95,13 +89,13 @@ public class Users extends AbstractEntity {
         this.comments = comments;
     }
 
-    public List<PostRating> getPostRatings() {
-        return postRatings;
-    }
-
-    public void setPostRatings(List<PostRating> postRatings) {
-        this.postRatings = postRatings;
-    }
+//    public List<PostRating> getPostRatings() {
+//        return postRatings;
+//    }
+//
+//    public void setPostRatings(List<PostRating> postRatings) {
+//        this.postRatings = postRatings;
+//    }
 
     public List<ApplicationRating> getApplicationRatings() {
         return applicationRatings;

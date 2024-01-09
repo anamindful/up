@@ -1,6 +1,7 @@
 package org.greencoding.TravelUP.controllers;
 
 
+import org.springframework.ui.Model;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
@@ -10,7 +11,6 @@ import org.greencoding.TravelUP.models.User;
 import org.greencoding.TravelUP.models.data.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -32,7 +32,7 @@ public class AuthenticationController {
 
     public User getUserFromSession(HttpSession session) {
 
-        Integer userId = (Integer) session.getAttribute(userSessionKey);
+        Long userId = (Long) session.getAttribute(userSessionKey);
         if (userId == null) {
             return null;
 
@@ -49,7 +49,6 @@ public class AuthenticationController {
     @GetMapping("/createaccount")
     public String displayRegistrationForm(Model model, HttpSession session) {
         model.addAttribute(new RegistrationFormDTO());
-        model.addAttribute("loggedIn", session.getAttribute(userSessionKey) != null);
         return "createaccount";
     }
 

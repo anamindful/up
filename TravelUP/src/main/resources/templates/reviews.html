@@ -151,23 +151,28 @@
 
 <!-- Reviews container -->
 <div class="reviews-container">
-    <!-- Review Card 1 -->
-    <div class="review-card">
-        <div class="star-ratings">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
-        <div class="review-text">
-            <p><strong>Location:</strong> Hotel Name 1</p>
-            <p><strong>Review:</strong> reviews shown here.</p>
-        </div>
-    </div>
 
-    <!-- Review Card 2 -->
-    <div class="review-card">
-        <div class="star-ratings">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="review-text">
-            <p><strong>Location:</strong> Hotel Name 2</p>
-            <p><strong>Review:</strong> reviews shown here.</p>
+    <section th:if="${posts.size()>0}">
+        <div th:each="post:${posts}">
+            <!-- Review Card 1 -->
+            <div class="review-card">
+                <div class="star-ratings">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                <div class="review-text">
+                    <p><strong th:text="${post.location}"></strong></p>
+                    <p><strong th:text="${post.caption}">Review:</strong> reviews shown here.</p>
+                </div>
+            </div>
         </div>
-    </div>
+
+        <!-- Review Card 2 -->
+        <!--    <div class="review-card">-->
+        <!--        <div class="star-ratings">&#9733;&#9733;&#9733;&#9733;&#9733;</div>-->
+        <!--        <div class="review-text">-->
+        <!--            <p><strong>Location:</strong> Hotel Name 2</p>-->
+        <!--            <p><strong>Review:</strong> reviews shown here.</p>-->
+        <!--        </div>-->
+        <!--    </div>-->
+    </section>
 
     <!-- Add more review cards as needed -->
 </div>
