@@ -49,6 +49,7 @@ public class AuthenticationController {
     @GetMapping("/createaccount")
     public String displayRegistrationForm(Model model, HttpSession session) {
         model.addAttribute(new RegistrationFormDTO());
+        model.addAttribute("loggedIn", session.getAttribute(userSessionKey) != null);
         return "createaccount";
     }
 

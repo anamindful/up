@@ -145,9 +145,16 @@ devices with varying screen sizes -->
 
 <!-- Links-->
 
-<div class="login-container">
-    <a th:href="@{/login}">Log In</a>
+<!--<header th:replace="~{fragments :: header}"></header>-->
+<th:block>
+<div th:if="${loggedIn}" class="login-container">
+    <a th:href="@{/login}">Log Out</a>
 </div>
+    <div th:unless="${loggedIn}" class="login-container">
+        <a th:href="@{/login}">Log In</a>
+    </div>
+</th:block>
+
 
 
 <div class="navbar">
