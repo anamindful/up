@@ -64,7 +64,7 @@ devices with varying screen sizes -->
     }
 
     .navbar-content a:hover {
-        background-color: white;
+        background-color: #58C7EF;
     }
 
     .navbar:hover .navbar-content {
@@ -86,9 +86,9 @@ devices with varying screen sizes -->
         /* Style the search bar */
         #search-bar {
             width: 80%;
-            max-width: 400px;
-            padding: 8px;
-            margin: 20px auto;
+            max-width: 300px;
+            padding: 1px 1px;
+            margin: auto;
             display: block;
         }
 
@@ -124,7 +124,7 @@ devices with varying screen sizes -->
         }
 
         button {
-            width: 100%;
+            width: 80%;
             padding: 10px;
             background-color: #2196F3;
             color: #fff;
@@ -134,25 +134,27 @@ devices with varying screen sizes -->
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #58C7EF;
         }
+
 
     </style>
 </head>
 
 <body>
-<h1>TravelUP</h1>
+<!--<h1>TravelUP</h1>-->
 
+<img src="https://cdn-sharing.adobecc.com/composite/component/id/urn:aaid:sc:VA6C2:2f373f74-14a2-47b9-ba6a-3d166cbea4b9?component_id=a6e7b5ed-6dd9-48de-973e-ce6cdb149bbc&revision=57311bbc-b2f3-44af-9794-ae6a406a345e&api_key=projectx_webapp&access_token=1704815544_urn%3Aaaid%3Asc%3AVA6C2%3A2f373f74-14a2-47b9-ba6a-3d166cbea4b9%3Bpublic_7ba1170eccb630ad1a4d86a0216cb08ef891f719"
+     alt="TravelUP">
 <!-- Links-->
-
 
 <div class="navbar">
     <button class="dropbtn">Menu</button>
     <div class="navbar-content">
-        <a th:href="@{/}">Home</a>
-        <a th:href="@{/reviews}">Reviews</a>
         <a th:unless="${authUser}" th:href="@{/login}">Log In</a>
         <a th:if="${authUser}" th:href="@{/logout}">Log Out</a>
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/reviews}">Reviews</a>
         <a th:href="@{/addreview}">Add Review</a>
         <a th:unless="${authUser}" th:href="@{/createaccount}">Create Account</a>
     </div>
@@ -160,13 +162,13 @@ devices with varying screen sizes -->
 
 
 <!-- Search bar -->
-<label for="search-bar"></label><input type="text" id="search-bar" placeholder="Search by Star Ratings...">
+<label for="search-bar"></label><input type="text" id="search-bar" placeholder="Search...">
 
 <!-- Reviews container -->
 <div class="reviews-container">
     <!-- Review Card 1 -->
     <div class="review-card">
-        <div class="star-ratings">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+        <!--        <div class="star-ratings">&#9733;&#9733;&#9733;&#9733;&#9734;</div>-->
         <div class="review-text">
             <p><strong>Location:</strong> Hotel Name 1</p>
             <p><strong>Review:</strong> reviews shown here.</p>
@@ -175,7 +177,7 @@ devices with varying screen sizes -->
 
     <!-- Review Card 2 -->
     <div class="review-card">
-        <div class="star-ratings">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+        <!--        <div class="star-ratings">&#9733;&#9733;&#9733;&#9733;&#9734;</div>-->
         <div class="review-text">
             <p><strong>Location:</strong> Hotel Name 1</p>
             <p><strong>Review:</strong> reviews shown here.</p>
@@ -184,7 +186,7 @@ devices with varying screen sizes -->
 
     <!-- Review Card 3 -->
     <div class="review-card">
-        <div class="star-ratings">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <!--    <div class="star-ratings">&#9733;&#9733;&#9733;&#9733;&#9733;</div>-->
         <div class="review-text">
             <p><strong>Location:</strong> Hotel Name 2</p>
             <p><strong>Review:</strong> reviews shown here.</p>
@@ -193,13 +195,14 @@ devices with varying screen sizes -->
 
     <!-- Review Card 4 -->
     <div class="review-card">
-        <div class="star-ratings">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <!--    <div class="star-ratings">&#9733;&#9733;&#9733;&#9733;&#9733;</div>-->
         <div class="review-text">
             <p><strong>Location:</strong> Hotel Name 2</p>
             <p><strong>Review:</strong> reviews shown here.</p>
         </div>
     </div>
 </div>
+
 
 </body>
 
