@@ -26,11 +26,6 @@ public class HomeController {
     }
 
 
-//    @GetMapping("login")
-//    public String login(){
-//        return "login";
-//    }
-
     @GetMapping("addreview")
     public String addreview(){
         return "addreview";
@@ -46,10 +41,7 @@ public class HomeController {
         return "submitedreview";
     }
 
-//    @GetMapping("createaccount")
-//    public String createaccount(){
-//        return "createaccount";
-//    }
+
 
 
 }
