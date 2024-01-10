@@ -17,6 +17,8 @@ public class Comment extends AbstractEntity {
     @Column(name = "comment_text")
     private String commentText;
 
+    public Comment () {}
+
     public Comment(Long id, Users user, Post post, String commentText) {
         super(id);
         this.user = user;

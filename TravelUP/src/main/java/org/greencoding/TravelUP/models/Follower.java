@@ -14,6 +14,8 @@ public class Follower extends AbstractEntity {
     @JoinColumn(name = "following_user_id")
     private Users following;
 
+    public Follower () {}
+
     public Follower(Long id, Users follower, Users following) {
         super(id);
         this.follower = follower;
@@ -36,3 +38,4 @@ public class Follower extends AbstractEntity {
         this.following = following;
     }
 }
+
