@@ -32,7 +32,7 @@ public class AuthenticationController {
 
     public User getUserFromSession(HttpSession session) {
 
-        Integer userId = (Integer) session.getAttribute(userSessionKey);
+        Long userId = (Long) session.getAttribute(userSessionKey);
         if (userId == null) {
             return null;
 
@@ -49,6 +49,7 @@ public class AuthenticationController {
     @GetMapping("/createaccount")
     public String displayRegistrationForm(Model model, HttpSession session) {
         model.addAttribute(new RegistrationFormDTO());
+        model.addAttribute("loggedIn", session.getAttribute(userSessionKey) != null);
         return "createaccount";
     }
 
