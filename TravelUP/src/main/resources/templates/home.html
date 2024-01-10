@@ -145,20 +145,19 @@ devices with varying screen sizes -->
 
 <!-- Links-->
 
-<div class="login-container">
-    <a th:href="@{/login}">Log In</a>
-</div>
-
 
 <div class="navbar">
     <button class="dropbtn">Menu</button>
     <div class="navbar-content">
         <a th:href="@{/}">Home</a>
         <a th:href="@{/reviews}">Reviews</a>
+        <a th:unless="${authUser}" th:href="@{/login}">Log In</a>
+        <a th:if="${authUser}" th:href="@{/logout}">Log Out</a>
         <a th:href="@{/addreview}">Add Review</a>
-        <a th:href="@{/createaccount}">Create Account</a>
+        <a th:unless="${authUser}" th:href="@{/createaccount}">Create Account</a>
     </div>
 </div>
+
 
 <!-- Search bar -->
 <label for="search-bar"></label><input type="text" id="search-bar" placeholder="Search by Star Ratings...">
